@@ -20,13 +20,12 @@ It runs errday.
 
 ## Notable sightings
 
+### Thanksgiving 2024
+
 On Thanksgiving 2024, the script ran with the turkey cowfile.
 
-https://cowsay.today/all/html/2024-11-28-cowsay.html
-
-This was a monumental moment for the season. Truly prophetic words.
-
 ```
+~ % curl https://cowsay.today/all/txt/2024-11-28-cowsay.txt
 Today is 11/28/24.
 Here is your daily fortune from "turkey".
  _________________________________________
@@ -56,6 +55,7 @@ Here is your daily fortune from "turkey".
                       ^^^ ^^ ^^^ ^
 ```
 
+This was a monumental moment for the season. Truly prophetic words.
 We may learn much from the wise turkey.
 
 ## Suggestions
