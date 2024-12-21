@@ -42,6 +42,7 @@ prev_date=$(date -I --date=-1day)
 next_date=$(date -I --date=+1day)
 echo "<html>" > "$DAILY_COWSAY_HTML"
 echo "<a href="/all/html/$prev_date-cowsay.html">&lt prev day</a> || " >> "$DAILY_COWSAY_HTML"
+echo "<a href="/all/html/">all</a> || " >> "$DAILY_COWSAY_HTML"
 echo "<a href="/all/html/$next_date-cowsay.html">next day &gt</a>" >> "$DAILY_COWSAY_HTML"
 echo "<pre>" >> "$DAILY_COWSAY_HTML"
 cat $DAILY_COWSAY_TXT >> "$DAILY_COWSAY_HTML"
