@@ -8,6 +8,14 @@ We have DNS records that say http://cowsay.today is that server.
 
 It makes HTML and TXT files for your browser or HTTP client.
 
+## How about curl?
+
+Yep, just do this for plain text :)
+
+```shell
+curl -sL https://cowsay.today/txt
+```
+
 ## How does it run?
 
 On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
@@ -16,9 +24,11 @@ On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
 0 1 * * * env USER=$LOGNAME /home/$USER/src/cowsay-today/gen_cowsay.sh
 ```
 
-It runs errday.
+It runs errday on Linux (a debian server).
 
 ## Notable sightings
+
+Here are some things that went down... so far
 
 ### Thanksgiving 2024
 
