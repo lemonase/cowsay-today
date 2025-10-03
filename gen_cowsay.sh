@@ -6,13 +6,9 @@
 
 # crontab -l
 # m h  dom mon dow   command
-# 0 1 * * * env USER=$LOGNAME /home/$USER/src/cowsay-today/gen_cowsay.sh
-# ---
-# NOTE: $USER env var is unset with script executed from cron, but we
-# can fix this by setting USER to $LOGNAME in our crontab so we don't have
-# to check in the script (nice default variable from cron, very cool)
+# 0 1 * * *  /path/to/gen_cowsay.sh
 
-DAILY_COWSAY_DIR="/home/$USER/www/daily-cowsays"
+DAILY_COWSAY_DIR="/var/www/daily-cowsays"
 DAILY_COWSAY_TXT="$DAILY_COWSAY_DIR/days/txt/$(date -I)-cowsay.txt"
 DAILY_COWSAY_HTML="$DAILY_COWSAY_DIR/days/html/$(date -I)-cowsay.html"
 
