@@ -1,17 +1,5 @@
 # Daily `fortune` delivered by a random `cow`
 
-<!--toc:start-->
-- [Daily `fortune` delivered by a random `cow`](#daily-fortune-delivered-by-a-random-cow)
-  - [What does it do?](#what-does-it-do)
-  - [How about curl?](#how-about-curl)
-  - [Directory Structure](#directory-structure)
-  - [How does it run?](#how-does-it-run)
-  - [Notable sightings](#notable-sightings)
-    - [Thanksgiving 2024](#thanksgiving-2024)
-  - [Suggestions](#suggestions)
-  - [Fin](#fin)
-<!--toc:end-->
-
 `gen_cowsay.sh` is a bash script that runs on a server.
 
 We have DNS records that say http://cowsay.today runs on a server *somewhere*
@@ -29,26 +17,33 @@ Yep, just do this for plain text :)
 curl -sL https://cowsay.today/today.txt
 ```
 
-## Directory Structure
+## Directory & File Name Structure
 
 ```
 / (https://cowsay.today/)
 ├── all -> days
 ├── days
-│   ├── conv_html.sh
 │   ├── html
 │   └── txt
-├── today.html -> /var/www/daily-cowsays/days/html/2026-06-16-cowsay.html
-└── today.txt -> /var/www/daily-cowsays/days/txt/2026-06-16-cowsay.txt
+├── today.html -> ./days/html/2026-06-16-cowsay.html
+└── today.txt -> ./days/txt/2026-06-16-cowsay.txt
 ```
 
-So if you wanted to get a previous day - you would do so like this
+The file name is generate as `$(date -I)-cowsay.{txt,html}`
 
-```
+So if you wanted to get a previous day (say March 15th) - you would do so like this
+
+### Text
+
+- https://cowsay.today/days/txt/2026-05-15-cowsay.txt
+
+```shell
 curl -sL https://cowsay.today/days/txt/2026-05-15-cowsay.txt
 ```
 
-or the equivalent HTTP: https://cowsay.today/days/html/2026-05-15-cowsay.html
+### HTML
+
+- https://cowsay.today/days/html/2026-05-15-cowsay.html
 
 ## How does it run?
 
@@ -58,8 +53,7 @@ On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
 0 1 * * * /path/to/gen_cowsay.sh
 ```
 
-It runs errday on a Linux (Debian) server hosted *somewhere*.
-
+It runs *errday* on a Linux (Debian) server hosted *somewhere*.
 
 ## Notable sightings
 
