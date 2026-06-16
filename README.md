@@ -1,8 +1,9 @@
 # Daily `fortune` delivered by a random `cow`
 
-`gen_cowsay.sh` is a bash script that runs on a server somewhere.
+`gen_cowsay.sh` is a bash script that runs on a server.
 
-We have DNS records that say http://cowsay.today is that server.
+We have DNS records that say http://cowsay.today runs on a server *somewhere*
+on the internet (hopefully).
 
 ## What does it do?
 
@@ -24,7 +25,7 @@ On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
 0 1 * * * env USER=$LOGNAME /home/$USER/src/cowsay-today/gen_cowsay.sh
 ```
 
-It runs errday on Linux (a debian server).
+It runs errday on a Linux (Debian) server hosted *somewhere*.
 
 ## Notable sightings
 
