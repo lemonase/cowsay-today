@@ -14,8 +14,36 @@ It makes HTML and TXT files for your browser or HTTP client.
 Yep, just do this for plain text :)
 
 ```shell
-curl -sL https://cowsay.today/txt
+curl -sL https://cowsay.today/today.txt
 ```
+
+## Directory & File Name Structure
+
+```
+/ (https://cowsay.today/)
+├── all -> days
+├── days
+│   ├── html
+│   └── txt
+├── today.html -> ./days/html/2026-06-16-cowsay.html
+└── today.txt -> ./days/txt/2026-06-16-cowsay.txt
+```
+
+The file name is generate as `$(date -I)-cowsay.{txt,html}`
+
+So if you wanted to get a previous day (say March 15th) - you would do so like this
+
+### Text
+
+- https://cowsay.today/days/txt/2026-05-15-cowsay.txt
+
+```shell
+curl -sL https://cowsay.today/days/txt/2026-05-15-cowsay.txt
+```
+
+### HTML
+
+- https://cowsay.today/days/html/2026-05-15-cowsay.html
 
 ## How does it run?
 
@@ -25,7 +53,7 @@ On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
 0 1 * * * /path/to/gen_cowsay.sh
 ```
 
-It runs errday on a Linux (Debian) server hosted *somewhere*.
+It runs *errday* on a Linux (Debian) server hosted *somewhere*.
 
 ## Notable sightings
 
