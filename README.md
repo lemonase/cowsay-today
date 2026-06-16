@@ -22,7 +22,7 @@ curl -sL https://cowsay.today/txt
 On the daily using [cron](https://en.wikipedia.org/wiki/Cron).
 
 ```
-0 1 * * * env USER=$LOGNAME /home/$USER/src/cowsay-today/gen_cowsay.sh
+0 1 * * * /path/to/gen_cowsay.sh
 ```
 
 It runs errday on a Linux (Debian) server hosted *somewhere*.
